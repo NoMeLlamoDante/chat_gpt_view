@@ -1,21 +1,26 @@
 :root{
-
+    --black: #000000;
+    --dark-gray: #4c4c4c;
+    --gray: #7d7d7d;
+    --light-gray: #c6c6c6;
+    --White: #ffffff;
 }
 *{
     margin: 0;
     box-sizing: border-box;
 }
 body{
-
+    color: var(--black);
+    background-color: var(--gray);
 }
 .link-item {
     display: inline-flex;
     padding: 0.3rem 0.3rem;
 }
 a{
-color: #000000;
+color: var(--black);
 text-decoration: none;
-border: 2px solid #000000;
+border: 2px solid var(--black);
 align-items: center;
 border-radius: 2rem;
 }
@@ -30,9 +35,12 @@ ul{
     padding: 0;
 }
 input{
+    background-color: inherit;
     border: none;
-    border
 }
 input:focus{
     outline: none;
+}
+input::placeholder{
+    color: inherit;
 }
