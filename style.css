@@ -74,7 +74,7 @@ h5{
     margin-left: auto;
 }
 .sidebar-header a{
-    padding: .5rem .5rem;
+    padding: .5rem;
 }
 .sidebar-body{
     overflow-x: hidden;
@@ -101,4 +101,44 @@ h5{
     text-overflow: ellipsis;
     overflow: hidden; 
     white-space: nowrap;
+}
+.navbar{
+    grid-area: navbar;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.container-chat{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr 3fr 1fr;
+    grid-template-areas:
+    "navbar navbar navbar"
+    "texto texto texto"
+    "contenedor contenedor contenedor"
+    "botones botones botones"
+    "footer footer footer";
+}
+.data-container{
+    grid-area: texto;
+    align-content: end;
+    justify-self: center;
+}
+.round-container{
+    grid-area: contenedor;
+    background-color: var(--gray);
+    width: 70%;
+    
+    justify-self: center;
+}
+.buttons{
+    grid-area: botones;
+    justify-self: center;
+}
+footer{
+    grid-area: footer;
+    align-content: end;
+    justify-self: center;
+    padding-bottom: .5rem;
 }
