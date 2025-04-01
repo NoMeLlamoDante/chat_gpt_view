@@ -8,3 +8,31 @@
 body{
 
 }
+.link-item {
+    display: inline-flex;
+    padding: 0.3rem 0.3rem;
+}
+a{
+color: #000000;
+text-decoration: none;
+border: 2px solid #000000;
+align-items: center;
+border-radius: 2rem;
+}
+.img-logo{
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: invert(1);
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+input{
+    border: none;
+    border
+}
+input:focus{
+    outline: none;
+}
