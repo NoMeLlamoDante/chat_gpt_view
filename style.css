@@ -39,8 +39,13 @@ ul{
     padding: 0;
 }
 input{
+    width: 100%;
+    padding: 1rem;
     background-color: inherit;
     border: none;
+    font-size: inherit;
+    color: inherit;
+
 }
 input:focus{
     outline: none;
@@ -73,7 +78,7 @@ h5{
 .sidebar-header a:nth-child(2){
     margin-left: auto;
 }
-.sidebar-header a{
+.sidebar-header a, .navbar a{
     padding: .5rem;
 }
 .sidebar-body{
@@ -107,6 +112,7 @@ h5{
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    margin: .3rem 1.2rem;
 }
 .container-chat{
     width: 100%;
@@ -124,17 +130,58 @@ h5{
     grid-area: texto;
     align-content: end;
     justify-self: center;
+    padding-bottom: 1rem;
 }
 .round-container{
-    grid-area: contenedor;
-    background-color: var(--gray);
     width: 70%;
-    
+    max-width: 800px;
+    grid-area: contenedor;
     justify-self: center;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--gray);
+    border-radius: 1rem;
+    overflow: hidden;
+    justify-content: space-between;
+    align-items: center;
+}
+.container-buttons{
+    display: flex;
+    width: 95%;
+    justify-content: start;
+    align-content: center;
+    padding-bottom: .5rem;
+    gap: 1rem;
+}
+.container-buttons a{
+    border: 1px solid var(--light-gray);
+}
+.container-buttons a:last-of-type{
+    margin-left: auto;
+    color: var(--dark-gray);
+    background-color: var(--light-gray);
+}
+.container-buttons a:last-of-type:hover{
+    color: var(--light-gray);
+    background-color: var(--dark-gray);
 }
 .buttons{
+    display: flex;
+    padding-top: .5rem;
     grid-area: botones;
     justify-self: center;
+    align-items: center;
+    margin-bottom: auto;
+    gap: 1rem;
+
+}
+.buttons a{
+    border: 1px solid var(--light-gray);
+    gap: .5rem
+}
+.buttons a:hover{
+    color: var(--dark-gray);
+    background-color: var(--light-gray);
 }
 footer{
     grid-area: footer;
