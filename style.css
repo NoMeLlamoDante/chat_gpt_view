@@ -78,6 +78,9 @@ input{
     border: none;
     font-size: inherit;
     color: inherit;
+    overflow: hidden;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 
 }
 input:focus{
@@ -208,13 +211,16 @@ h5{
     border: 1px solid var(--container-text-color);
     border-radius: 3rem;
 }
-.container-buttons a:last-of-type{
+.container-buttons button{
     margin-left: auto;
     color: var(--container-background-color);
     background-color: var(--container-text-color);
+    border: none;
+    border-radius: 3em;
 }
-.container-buttons a:last-of-type:hover{
+.container-buttons button:hover{
     background-color: var(--sidebar-hover-color);
+    color: inherit;
 }
 .buttons{
     display: flex;
@@ -285,19 +291,24 @@ footer{
     align-self: center;
     overflow-y: scroll;
     gap: .5rem;
-    /* white-space: nowrap; */
+    scrollbar-color: var(--sidebar-hover-color) var(--container-background-color);
+    
 }
 .p_question{
-    padding: .5rem 1rem;
+    max-width: 70%;
+    margin-right: 2rem;
+    
     background-color: var(--sidebar-container-color);
     border-radius: 1rem;
-    margin-right: 2rem;
-    max-width: 70%;
+
     align-self: flex-end;
+    padding: .5rem 1rem;
 }
 
 .p_answer{
     max-width: 70%;
+    margin-left: 2rem;
+
     align-self: flex-start;
     padding: .5rem 1rem;
 }

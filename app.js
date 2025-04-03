@@ -54,28 +54,19 @@ QS("input").addEventListener("keyup", function (event) {
             let answers_container = QS(".answers");
             answers_container.display = "flex";
 
-            // Print question
-            const question = document.createElement("p");
-            question.className = "p_question";
-            question.innerText = input.value;
-            answers_container.append(question);
-            
-            // Print answer
-            const answer = document.createElement("p");
-            answer.className = "p_answer";
-            answer.innerText = "Lorem ipsum dolor sit amet \
-            consectetur adipisicing elit. \Excepturi ea porro unde, id debitis tempore \
-            est qui quo quasi, maxime natus! Modi libero \
-            architecto fugiat optio aspernatur provident deserunt error.";
-            answers_container.append(answer);
+            get_by_ID("1").innerText = "";
+            get_by_ID("2").innerText = "";
+            get_by_ID("3").innerText = "";
+            get_by_ID("4").innerText = "";
 
+            asking(input.value);
             input.value = "";
         }
     } else {
         // Alter buttons and ask-hints
-        const answers_is_visible = get_css_attrib(".buttons").display;
-        if (answers_is_visible === "flex") {
-            if (length_value == 0) {
+        let answers_is_visible = get_css_attrib(".data-container").display;
+        if (answers_is_visible === "block") {
+            if (length_value === 0) {
                 QS(".buttons").style.display = "flex";
                 QS(".asks-hints").style.display = "none";
             } else {
@@ -90,7 +81,41 @@ QS("input").addEventListener("keyup", function (event) {
         
     }
 });
+function asking(question) {
+    // Container answer
+    let answers_container = QS(".answers");
 
+    // Print question
+    const p_question = document.createElement("p");
+    p_question.className = "p_question";
+    p_question.innerText = question;
+    answers_container.append(p_question);
+    
+    // Print answer
+    const answer = document.createElement("p");
+    answer.className = "p_answer";
+    answer.innerText = "Lorem ipsum dolor sit amet \
+    consectetur adipisicing elit. \Excepturi ea porro unde, id debitis tempore \
+    est qui quo quasi, maxime natus! Modi libero \
+    architecto fugiat optio aspernatur provident deserunt error.";
+    answers_container.append(answer);
+}
+function clear_data() {
+    // vaciar Container answer
+    let answers_container = QS(".answers");
+    const elements = answers_container.getElementsByTagName("p");
+    while(elements.length>0){
+        elements[0].remove();
+    }
+
+    //Regresar contenedores
+    get_by_ID("chat").style.display = "grid";
+    QS_style(".data-container").display = "block";
+    QS_style(".buttons").display = "flex";
+    QS_style(".asks-hints").display = "none";
+    QS_style("footer").display = "block";
+    answers_container.display = "none";
+}
 function QS(class_name) {
     return document.querySelector(class_name);
 }
