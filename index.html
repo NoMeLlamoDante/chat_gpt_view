@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +11,34 @@
     <div class="container">
         <aside class="sidebar">
             <div class="sidebar-header">
-                <a href="#" class="link-item"><span class="material-symbols-outlined">dock_to_right</span></a>
+                <button class="link-item btn-theme" onclick="toggleSidebar();"><span class="material-symbols-outlined">dock_to_right</span></button>
                 <a href="#" class="link-item"><span class="material-symbols-outlined">search</span></a>
                 <a href="#" class="link-item"><span class="material-symbols-outlined">edit_square</span></a>
             </div>
             <div class="sidebar-body">
                 <a href="" class="link-item">
-                    <img src="assets/gpt.svg" class="img-logo" alt="chatgpt logo" width=16 height="16" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
+                        <path d="M11.7453 14.85L6.90436 12V7C6.90436 4.79086 8.72949 3 10.9809 3C12.3782 3 13.6113 3.6898 14.3458 4.74128" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M9.59961 19.1791C10.3266 20.2757 11.5866 21.0008 13.0192 21.0008C15.2707 21.0008 17.0958 19.21 17.0958 17.0008V12.0008L12.1612 9.0957" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M9.45166 13.5L9.45123 7.66938L13.8642 5.16938C15.814 4.06481 18.3072 4.72031 19.4329 6.63348C20.1593 7.86806 20.1388 9.32466 19.5089 10.4995" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M4.48963 13.4993C3.8595 14.6742 3.83887 16.131 4.56539 17.3657C5.6911 19.2789 8.18428 19.9344 10.1341 18.8298L14.5471 16.3298L14.643 10.7344" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M17.0959 17.6309C18.4415 17.5734 19.7295 16.8634 20.4529 15.634C21.5786 13.7209 20.9106 11.2745 18.9608 10.1699L14.5478 7.66992L9.48907 10.4255" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.90454 6.36938C5.55865 6.42662 4.27032 7.13672 3.54684 8.3663C2.42113 10.2795 3.08917 12.7258 5.03896 13.8304L9.45196 16.3304L14.5 13.5807" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
                     <p>ChatGPT</p>
                 </a>
                 <a href="" class="link-item">
-                    <img src="assets/VA.svg" class="img-logo" alt="Veterrans afair logo"  width=16 height="16">
+                    <svg width="24" height="24" viewBox="0 0 345 211" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1893_25827)">
+                        <path d="M66.1528 210.998L0 0H51.1897L76.2696 89.2336C83.3574 114.616 89.7788 138.364 94.4434 164.655H95.3521C100.562 139.333 106.983 114.253 114.071 90.1423L140.605 0H190.28L120.735 210.998H66.1528Z" fill="currentColor"/>
+                        <path d="M219.358 156.84L204.637 210.998H156.537L219.358 0H280.664L345.303 210.998H294.416L278.665 156.84H219.358ZM271.759 121.159L258.856 76.3907C255.221 63.8508 251.526 48.4636 248.375 35.6813H247.709C244.68 48.2213 241.651 64.1537 238.259 76.3907L226.143 121.159H271.759Z" fill="currentColor"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1893_25827">
+                        <rect width="345" height="210.998" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
                     <p>Veterans Affair Guide</p>
                 </a>
                 <a href="" class="link-item">
@@ -75,8 +92,19 @@
         </aside>
         <div class="container-chat"> 
             <nav class="navbar">
-                <a href="" class="link-item"><h1>ChatGPT</h1></a>
-                <a href="" class="link-item"><span class="material-symbols-outlined">person</span></a>
+                <div class="logo">
+                    <button class="link-item btn-theme" onclick="toggleSidebar();" id="toggle-chat" style="display: none;"><span class="material-symbols-outlined">dock_to_right</span></button>
+                    <button class="link-item btn-theme" onclick="toggleTheme();">
+                        <span class="material-symbols-outlined light">light_mode</span>
+                        <span class="material-symbols-outlined dark">dark_mode</span>
+                    </button>
+                    <a href="" class="link-item"><h3>ChatGPT</h3><span class="material-symbols-outlined">stat_minus_1</span></a>
+                </div>
+                <div class="user">
+                    <a href="" class="link-item">
+                        <span class="material-symbols-outlined">person</span>
+                    </a>
+                </div>
             </nav>
             <div class="data-container">
                 <h2>¿En qué puedo ayudarte?</h2>
@@ -98,27 +126,28 @@
             </div>
             <div class="buttons">
                 <a href="" class="link-item">
-                    <span class="material-symbols-outlined">add_photo_alternate</span>
+                    <span class="material-symbols-outlined" style="color: limegreen;">add_photo_alternate</span>
                     Crear una imagen
                 </a>
                 <a href="" class="link-item">
-                    <span class="material-symbols-outlined">edit_note</span>
+                    <span class="material-symbols-outlined" style="color: orchid;">edit_note</span>
                     Ayúdame a escribir
                 </a>
                 <a href="" class="link-item">
-                    <span class="material-symbols-outlined">terminal</span>
+                    <span class="material-symbols-outlined" style="color: mediumslateblue;">terminal</span>
                     Código
                 </a>
                 <a href="" class="link-item">
-                    <span class="material-symbols-outlined">description</span>
+                    <span class="material-symbols-outlined" style="color: lightcoral;">description</span>
                     Resumir texto
                 </a>
-                <a href="" class="link-item" style="padding: .4rem;">Más</a>
+                <a href="" class="link-item" style="line-height: 1.6rem;">Más</a>
             </div>
             <footer>
                 ChatGPT puede cometer errores. Considere verificar la información importante
             </footer>
         </div>
     </div>
+    <script src="app.js"></script>
 </body>
 </html>
