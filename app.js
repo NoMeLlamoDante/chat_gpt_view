@@ -1,10 +1,32 @@
+document.body.onload = initial;
+
+function initial() {
+    const dblocalStorage = window.localStorage;
+    const default_theme = dblocalStorage.getItem("theme");
+    if (default_theme === null){
+        //Get System theme
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // Dark Mode
+            dblocalStorage.setItem("theme", "dark");
+            root.dataset.theme = "dark";
+        } else {
+            root.dataset.theme = "light";
+            dblocalStorage.setItem("theme", "light");
+        }
+    } else {
+        const root = document.documentElement;
+        root.dataset.theme = default_theme;
+    }
+}
 
 function toggleTheme() {
     const root = document.documentElement;
     if (root.dataset.theme === "light") {
-        root.dataset.theme = "dark"
+        root.dataset.theme = "dark";
+        localStorage.setItem("theme", "dark");
     } else {
-        root.dataset.theme = "light"
+        root.dataset.theme = "light";
+        localStorage.setItem("theme", "light");
     }
 }
 
